@@ -1,0 +1,115 @@
+import cookie from 'cookie';
+
+// 键名前缀
+let preKey = '';
+
+// 测试键名
+let testKey = '__test__';
+
+// cookie存储选项
+// https://github.com/jshttp/cookie#options-1
+let cookieOptions = {
+  path: '/',
+};
+
+/**
+ * 获取某个cookie值
+ *
+ * @param {string} key
+ * @return {string}
+ * @example obj.getItem('a2')
+ */
+const getItem = (key) => {
+  const cookieObj = cookie.parse(document.cookie);
+  return cookieObj[preKey + key] === undefined ? null : cookieObj[preKey + key];
+};
+
+/**
+ * 设置某个cookie值
+ *
+ * @param {string} key
+ * @param {string} value
+ * @param {object} options
+ * @example obj.setItem('a2', 'b', { maxAge: 86400, domain: 'local.com' })
+ */
+const setItem = (key, value, options = {}) => {
+  options = Object.assign({}, cookieOptions, options);
+  document.cookie = cookie.serialize(preKey + key, value, options);
+};
+
+/**
+ * 删除某个cookie
+ *
+ * @param {string} key
+ * @param {object} options
+ * @example obj.removeItem('a2', { domain: 'local.com' })
+ */
+const removeItem = (key, options) => {
+  options = Object.assign({}, cookieOptions, options, {maxAge: -1});
+  document.cookie = cookie.serialize(preKey + key, '', options);
+};
+
+/**
+ * 验证是否支持cookie
+ *
+ * @return {boolean}
+ * @example obj.isSupport()
+ */
+const isSupport = () => {
+  try {
+    setItem(testKey, 'a');
+    const value1 = getItem(testKey);
+    removeItem(testKey);
+    const value2 = getItem(testKey);
+    return value1 === 'a' && value2 === null;
+  } catch (e) {
+    return false;
+  }
+};
+
+/**
+ * 设置cookie存储选项
+ *
+ * @param {object} option
+ * @example obj.setCookieOptions({ path: '/abc', maxAge: 86400, domain: 'local.com' })
+ */
+const setOptions = (option) => {
+  cookieOptions = Object.assign({}, cookieOptions, option);
+};
+
+/**
+ * 设置键名前缀
+ *
+ * @param {string} key
+ * @example obj.setPreKey('h5-')
+ */
+const setPreKey = (key) => {
+  preKey = key;
+};
+
+/**
+ * 设置测试键名
+ *
+ * @param {string} key
+ * @example obj.setTestKey('__test_key__')
+ */
+const setTestKey = (key) => {
+  testKey = key;
+};
+
+export default {
+  // 获取某个值
+  getItem,
+  // 设置某个值
+  setItem,
+  // 删除某个键值
+  removeItem,
+  // 是否支持cookie
+  isSupport,
+  // 设置cookie存储选项
+  setOptions,
+  // 设置键名前缀
+  setPreKey,
+  // 设置测试键名
+  setTestKey,
+};
