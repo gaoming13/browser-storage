@@ -20,7 +20,8 @@
     "build": "rollup -c && terser dist/browser-store.js --comments '/^aa/' -o dist/browser-store.min.js",
     "dev": "rollup -c -m -w",
     "lint": "eslint src *.js",
-    "test": "cross-env NODE_ENV=test rollup -c && karma start test/karma.conf.js"
+    "test": "cross-env NODE_ENV=test rollup -c && karma start test/karma.conf.js",
+    "codecov": "cat coverage/lcov.info | codecov"
   },
   "dependencies": {
     "cookie": "^0.4.0"
@@ -30,6 +31,7 @@
     "@babel/preset-env": "^7.7.4",
     "babel-plugin-istanbul": "^5.2.0",
     "chai": "^4.2.0",
+    "codecov": "^3.6.1",
     "cross-env": "^6.0.3",
     "eslint": "^6.7.2",
     "karma": "^4.4.1",
