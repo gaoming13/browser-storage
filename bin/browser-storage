@@ -1,0 +1,36 @@
+#!/usr/bin/env node
+'use strict';
+
+const Pkg = require('../package.json');
+
+require('coa').Cmd()
+  .helpful()
+  .name(Pkg.name)
+  .title(Pkg.description)
+
+  // 版本
+  .opt()
+  .name('version').title('版本号')
+  .short('v').long('version')
+  .only()
+  .flag()
+  .act(function() {
+    process.stdout.write(Pkg.version + '\n');
+    return '';
+  })
+  .end()
+
+  // 配置文件
+  .opt()
+    .name('config').title('配置文件')
+    .long('config')
+    .val(function(val) {
+        return val || this.reject("Option '--config' must have a value.");
+    })
+    .end()
+
+  // 执行
+  .act(function(opts, args) {
+    process.stdout.write(JSON.stringify({opts, args}) + '\n');
+  })
+  .run();

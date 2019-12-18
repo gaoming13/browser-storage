@@ -8,17 +8,17 @@ const conf = {
     // UMD(GLOBAL+AMD+CommonJs)
     {
       name: 'browserStore',
-      file: 'dist/browser-store.js',
+      file: 'dist/browser-storage.js',
       format: 'umd',
     },
     // CommonJs
     {
-      file: 'dist/browser-store.common.js',
+      file: 'dist/browser-storage.common.js',
       format: 'cjs',
     },
     // ESM
     {
-      file: 'dist/browser-store.esm.js',
+      file: 'dist/browser-storage.esm.js',
       format: 'esm',
     },
   ],
@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'test') {
   conf.output = [
     {
       name: 'browserStore',
-      file: 'dist/browser-store.istanbul.js',
+      file: 'dist/browser-storage.istanbul.js',
       format: 'umd',
     },
   ];

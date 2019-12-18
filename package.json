@@ -2,28 +2,32 @@
   "name": "@gaoming13/browser-storage",
   "description": "Use cookies, local storage, session storage according to priority.",
   "version": "1.0.1",
-  "main": "dist/browser-store.common.js",
-  "module": "dist/browser-store.esm.js",
-  "unpkg": "dist/browser-store.min.js",
+  "main": "dist/browser-storage.common.js",
+  "module": "dist/browser-storage.esm.js",
+  "unpkg": "dist/browser-storage.min.js",
   "repository": "gaoming13/browser-storage",
   "license": "MIT",
   "files": [
     "src",
     "dist"
   ],
+  "bin": {
+    "browser-storage": "./bin/browser-storage"
+  },
   "keywords": [
     "cookies",
     "local storage",
     "session storage"
   ],
   "scripts": {
-    "build": "rollup -c && terser dist/browser-store.js --comments '/^aa/' -o dist/browser-store.min.js",
+    "build": "rollup -c && terser dist/browser-storage.js --comments '/^aa/' -o dist/browser-storage.min.js",
     "dev": "rollup -c -m -w",
     "lint": "eslint src *.js",
     "test": "cross-env NODE_ENV=test rollup -c && karma start test/karma.conf.js",
     "codecov": "cat coverage/lcov.info | codecov"
   },
   "dependencies": {
+    "coa": "^2.0.2",
     "cookie": "^0.4.0"
   },
   "devDependencies": {

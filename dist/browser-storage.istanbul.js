@@ -206,13 +206,13 @@
   	serialize: serialize_1
   };
 
-  var cov_289s3zehxu = function () {
-    var path = "/Users/zhaoliming/GM13/github/browser-store/src/cookieStore.js";
-    var hash = "3548a17b348a981c2d0405bca6e07babc5ffcb3c";
+  var cov_fossv89kh = function () {
+    var path = "/Users/zhaoliming/GM13/github/browser-storage/src/cookieStore.js";
+    var hash = "31fa00dc2d4af6fa8fc8bbc768175da2313f4ca7";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/Users/zhaoliming/GM13/github/browser-store/src/cookieStore.js",
+      path: "/Users/zhaoliming/GM13/github/browser-storage/src/cookieStore.js",
       statementMap: {
         "0": {
           start: {
@@ -780,7 +780,7 @@
         "2": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "3548a17b348a981c2d0405bca6e07babc5ffcb3c"
+      hash: "31fa00dc2d4af6fa8fc8bbc768175da2313f4ca7"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -791,12 +791,12 @@
     return coverage[path] = coverageData;
   }();
 
-  var preKey = (cov_289s3zehxu.s[0]++, ''); // 测试键名
+  var preKey = (cov_fossv89kh.s[0]++, ''); // 测试键名
 
-  var testKey = (cov_289s3zehxu.s[1]++, '__test__'); // cookie存储选项
+  var testKey = (cov_fossv89kh.s[1]++, '__test__'); // cookie存储选项
   // https://github.com/jshttp/cookie#options-1
 
-  var cookieOptions = (cov_289s3zehxu.s[2]++, {
+  var cookieOptions = (cov_fossv89kh.s[2]++, {
     path: '/'
   });
   /**
@@ -807,13 +807,13 @@
    * @example obj.getItem('a2')
    */
 
-  cov_289s3zehxu.s[3]++;
+  cov_fossv89kh.s[3]++;
 
   var getItem = function getItem(key) {
-    cov_289s3zehxu.f[0]++;
-    var cookieObj = (cov_289s3zehxu.s[4]++, cookie.parse(document.cookie));
-    cov_289s3zehxu.s[5]++;
-    return cookieObj[preKey + key] === undefined ? (cov_289s3zehxu.b[0][0]++, null) : (cov_289s3zehxu.b[0][1]++, cookieObj[preKey + key]);
+    cov_fossv89kh.f[0]++;
+    var cookieObj = (cov_fossv89kh.s[4]++, cookie.parse(document.cookie));
+    cov_fossv89kh.s[5]++;
+    return cookieObj[preKey + key] === undefined ? (cov_fossv89kh.b[0][0]++, null) : (cov_fossv89kh.b[0][1]++, cookieObj[preKey + key]);
   };
   /**
    * 设置某个cookie值
@@ -825,14 +825,14 @@
    */
 
 
-  cov_289s3zehxu.s[6]++;
+  cov_fossv89kh.s[6]++;
 
   var setItem = function setItem(key, value) {
-    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (cov_289s3zehxu.b[1][0]++, {});
-    cov_289s3zehxu.f[1]++;
-    cov_289s3zehxu.s[7]++;
+    var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : (cov_fossv89kh.b[1][0]++, {});
+    cov_fossv89kh.f[1]++;
+    cov_fossv89kh.s[7]++;
     options = Object.assign({}, cookieOptions, options);
-    cov_289s3zehxu.s[8]++;
+    cov_fossv89kh.s[8]++;
     document.cookie = cookie.serialize(preKey + key, value, options);
   };
   /**
@@ -844,15 +844,15 @@
    */
 
 
-  cov_289s3zehxu.s[9]++;
+  cov_fossv89kh.s[9]++;
 
   var removeItem = function removeItem(key, options) {
-    cov_289s3zehxu.f[2]++;
-    cov_289s3zehxu.s[10]++;
+    cov_fossv89kh.f[2]++;
+    cov_fossv89kh.s[10]++;
     options = Object.assign({}, cookieOptions, options, {
       maxAge: -1
     });
-    cov_289s3zehxu.s[11]++;
+    cov_fossv89kh.s[11]++;
     document.cookie = cookie.serialize(preKey + key, '', options);
   };
   /**
@@ -863,23 +863,23 @@
    */
 
 
-  cov_289s3zehxu.s[12]++;
+  cov_fossv89kh.s[12]++;
 
   var isSupport = function isSupport() {
-    cov_289s3zehxu.f[3]++;
-    cov_289s3zehxu.s[13]++;
+    cov_fossv89kh.f[3]++;
+    cov_fossv89kh.s[13]++;
 
     try {
-      cov_289s3zehxu.s[14]++;
+      cov_fossv89kh.s[14]++;
       setItem(testKey, 'a');
-      var value1 = (cov_289s3zehxu.s[15]++, getItem(testKey));
-      cov_289s3zehxu.s[16]++;
+      var value1 = (cov_fossv89kh.s[15]++, getItem(testKey));
+      cov_fossv89kh.s[16]++;
       removeItem(testKey);
-      var value2 = (cov_289s3zehxu.s[17]++, getItem(testKey));
-      cov_289s3zehxu.s[18]++;
-      return (cov_289s3zehxu.b[2][0]++, value1 === 'a') && (cov_289s3zehxu.b[2][1]++, value2 === null);
+      var value2 = (cov_fossv89kh.s[17]++, getItem(testKey));
+      cov_fossv89kh.s[18]++;
+      return (cov_fossv89kh.b[2][0]++, value1 === 'a') && (cov_fossv89kh.b[2][1]++, value2 === null);
     } catch (e) {
-      cov_289s3zehxu.s[19]++;
+      cov_fossv89kh.s[19]++;
       return false;
     }
   };
@@ -891,11 +891,11 @@
    */
 
 
-  cov_289s3zehxu.s[20]++;
+  cov_fossv89kh.s[20]++;
 
   var setOptions = function setOptions(option) {
-    cov_289s3zehxu.f[4]++;
-    cov_289s3zehxu.s[21]++;
+    cov_fossv89kh.f[4]++;
+    cov_fossv89kh.s[21]++;
     cookieOptions = Object.assign({}, cookieOptions, option);
   };
   /**
@@ -906,11 +906,11 @@
    */
 
 
-  cov_289s3zehxu.s[22]++;
+  cov_fossv89kh.s[22]++;
 
   var setPreKey = function setPreKey(key) {
-    cov_289s3zehxu.f[5]++;
-    cov_289s3zehxu.s[23]++;
+    cov_fossv89kh.f[5]++;
+    cov_fossv89kh.s[23]++;
     preKey = key;
   };
   /**
@@ -921,11 +921,11 @@
    */
 
 
-  cov_289s3zehxu.s[24]++;
+  cov_fossv89kh.s[24]++;
 
   var setTestKey = function setTestKey(key) {
-    cov_289s3zehxu.f[6]++;
-    cov_289s3zehxu.s[25]++;
+    cov_fossv89kh.f[6]++;
+    cov_fossv89kh.s[25]++;
     testKey = key;
   };
 
@@ -946,13 +946,13 @@
     setTestKey: setTestKey
   };
 
-  var cov_lclv134x8 = function () {
-    var path = "/Users/zhaoliming/GM13/github/browser-store/src/localStore.js";
-    var hash = "20c961a512fc50c477d50c8f0dd64c5371964ecc";
+  var cov_14x3ahwvzn = function () {
+    var path = "/Users/zhaoliming/GM13/github/browser-storage/src/localStore.js";
+    var hash = "12805c8e1839f808d233e0822f90ee0f58ddd562";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/Users/zhaoliming/GM13/github/browser-store/src/localStore.js",
+      path: "/Users/zhaoliming/GM13/github/browser-storage/src/localStore.js",
       statementMap: {
         "0": {
           start: {
@@ -1370,7 +1370,7 @@
         "0": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "20c961a512fc50c477d50c8f0dd64c5371964ecc"
+      hash: "12805c8e1839f808d233e0822f90ee0f58ddd562"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -1382,9 +1382,9 @@
   }();
 
   // 键名前缀
-  var preKey$1 = (cov_lclv134x8.s[0]++, ''); // 测试键名
+  var preKey$1 = (cov_14x3ahwvzn.s[0]++, ''); // 测试键名
 
-  var testKey$1 = (cov_lclv134x8.s[1]++, '__test__');
+  var testKey$1 = (cov_14x3ahwvzn.s[1]++, '__test__');
   /**
    * 获取某个localStorage值
    *
@@ -1393,11 +1393,11 @@
    * @example obj.getItem('a2')
    */
 
-  cov_lclv134x8.s[2]++;
+  cov_14x3ahwvzn.s[2]++;
 
   var getItem$1 = function getItem(key) {
-    cov_lclv134x8.f[0]++;
-    cov_lclv134x8.s[3]++;
+    cov_14x3ahwvzn.f[0]++;
+    cov_14x3ahwvzn.s[3]++;
     return localStorage.getItem(preKey$1 + key);
   };
   /**
@@ -1409,11 +1409,11 @@
    */
 
 
-  cov_lclv134x8.s[4]++;
+  cov_14x3ahwvzn.s[4]++;
 
   var setItem$1 = function setItem(key, value) {
-    cov_lclv134x8.f[1]++;
-    cov_lclv134x8.s[5]++;
+    cov_14x3ahwvzn.f[1]++;
+    cov_14x3ahwvzn.s[5]++;
     localStorage.setItem(preKey$1 + key, value);
   };
   /**
@@ -1424,11 +1424,11 @@
    */
 
 
-  cov_lclv134x8.s[6]++;
+  cov_14x3ahwvzn.s[6]++;
 
   var removeItem$1 = function removeItem(key) {
-    cov_lclv134x8.f[2]++;
-    cov_lclv134x8.s[7]++;
+    cov_14x3ahwvzn.f[2]++;
+    cov_14x3ahwvzn.s[7]++;
     localStorage.removeItem(preKey$1 + key);
   };
   /**
@@ -1439,23 +1439,23 @@
    */
 
 
-  cov_lclv134x8.s[8]++;
+  cov_14x3ahwvzn.s[8]++;
 
   var isSupport$1 = function isSupport() {
-    cov_lclv134x8.f[3]++;
-    cov_lclv134x8.s[9]++;
+    cov_14x3ahwvzn.f[3]++;
+    cov_14x3ahwvzn.s[9]++;
 
     try {
-      cov_lclv134x8.s[10]++;
+      cov_14x3ahwvzn.s[10]++;
       setItem$1(testKey$1, 'a');
-      var value1 = (cov_lclv134x8.s[11]++, getItem$1(testKey$1));
-      cov_lclv134x8.s[12]++;
+      var value1 = (cov_14x3ahwvzn.s[11]++, getItem$1(testKey$1));
+      cov_14x3ahwvzn.s[12]++;
       removeItem$1(testKey$1);
-      var value2 = (cov_lclv134x8.s[13]++, getItem$1(testKey$1));
-      cov_lclv134x8.s[14]++;
-      return (cov_lclv134x8.b[0][0]++, value1 === 'a') && (cov_lclv134x8.b[0][1]++, value2 === null);
+      var value2 = (cov_14x3ahwvzn.s[13]++, getItem$1(testKey$1));
+      cov_14x3ahwvzn.s[14]++;
+      return (cov_14x3ahwvzn.b[0][0]++, value1 === 'a') && (cov_14x3ahwvzn.b[0][1]++, value2 === null);
     } catch (e) {
-      cov_lclv134x8.s[15]++;
+      cov_14x3ahwvzn.s[15]++;
       return false;
     }
   };
@@ -1467,11 +1467,11 @@
    */
 
 
-  cov_lclv134x8.s[16]++;
+  cov_14x3ahwvzn.s[16]++;
 
   var setPreKey$1 = function setPreKey(key) {
-    cov_lclv134x8.f[4]++;
-    cov_lclv134x8.s[17]++;
+    cov_14x3ahwvzn.f[4]++;
+    cov_14x3ahwvzn.s[17]++;
     preKey$1 = key;
   };
   /**
@@ -1482,11 +1482,11 @@
    */
 
 
-  cov_lclv134x8.s[18]++;
+  cov_14x3ahwvzn.s[18]++;
 
   var setTestKey$1 = function setTestKey(key) {
-    cov_lclv134x8.f[5]++;
-    cov_lclv134x8.s[19]++;
+    cov_14x3ahwvzn.f[5]++;
+    cov_14x3ahwvzn.s[19]++;
     testKey$1 = key;
   };
 
@@ -1505,13 +1505,13 @@
     setTestKey: setTestKey$1
   };
 
-  var cov_2oss9vqfvn = function () {
-    var path = "/Users/zhaoliming/GM13/github/browser-store/src/sessionStore.js";
-    var hash = "e89c12eac45dd030708a63173412f60c8e3c635f";
+  var cov_r1ckgzlm5 = function () {
+    var path = "/Users/zhaoliming/GM13/github/browser-storage/src/sessionStore.js";
+    var hash = "5dece6be70fc805b7fcb9e3b649599a1feb7f72a";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/Users/zhaoliming/GM13/github/browser-store/src/sessionStore.js",
+      path: "/Users/zhaoliming/GM13/github/browser-storage/src/sessionStore.js",
       statementMap: {
         "0": {
           start: {
@@ -1976,7 +1976,7 @@
         "0": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "e89c12eac45dd030708a63173412f60c8e3c635f"
+      hash: "5dece6be70fc805b7fcb9e3b649599a1feb7f72a"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -1988,9 +1988,9 @@
   }();
 
   // 键名前缀
-  var preKey$2 = (cov_2oss9vqfvn.s[0]++, ''); // 测试键名
+  var preKey$2 = (cov_r1ckgzlm5.s[0]++, ''); // 测试键名
 
-  var testKey$2 = (cov_2oss9vqfvn.s[1]++, '__test__');
+  var testKey$2 = (cov_r1ckgzlm5.s[1]++, '__test__');
   /**
    * 获取某个sessionStorage值
    *
@@ -1999,11 +1999,11 @@
    * @example obj.getItem('a2')
    */
 
-  cov_2oss9vqfvn.s[2]++;
+  cov_r1ckgzlm5.s[2]++;
 
   var getItem$2 = function getItem(key) {
-    cov_2oss9vqfvn.f[0]++;
-    cov_2oss9vqfvn.s[3]++;
+    cov_r1ckgzlm5.f[0]++;
+    cov_r1ckgzlm5.s[3]++;
     return sessionStorage.getItem(preKey$2 + key);
   };
   /**
@@ -2015,11 +2015,11 @@
    */
 
 
-  cov_2oss9vqfvn.s[4]++;
+  cov_r1ckgzlm5.s[4]++;
 
   var setItem$2 = function setItem(key, value) {
-    cov_2oss9vqfvn.f[1]++;
-    cov_2oss9vqfvn.s[5]++;
+    cov_r1ckgzlm5.f[1]++;
+    cov_r1ckgzlm5.s[5]++;
     sessionStorage.setItem(preKey$2 + key, value);
   };
   /**
@@ -2030,11 +2030,11 @@
    */
 
 
-  cov_2oss9vqfvn.s[6]++;
+  cov_r1ckgzlm5.s[6]++;
 
   var removeItem$2 = function removeItem(key) {
-    cov_2oss9vqfvn.f[2]++;
-    cov_2oss9vqfvn.s[7]++;
+    cov_r1ckgzlm5.f[2]++;
+    cov_r1ckgzlm5.s[7]++;
     sessionStorage.removeItem(preKey$2 + key);
   };
   /**
@@ -2042,11 +2042,11 @@
    */
 
 
-  cov_2oss9vqfvn.s[8]++;
+  cov_r1ckgzlm5.s[8]++;
 
   var clear = function clear() {
-    cov_2oss9vqfvn.f[3]++;
-    cov_2oss9vqfvn.s[9]++;
+    cov_r1ckgzlm5.f[3]++;
+    cov_r1ckgzlm5.s[9]++;
     sessionStorage.clear();
   };
   /**
@@ -2057,23 +2057,23 @@
    */
 
 
-  cov_2oss9vqfvn.s[10]++;
+  cov_r1ckgzlm5.s[10]++;
 
   var isSupport$2 = function isSupport() {
-    cov_2oss9vqfvn.f[4]++;
-    cov_2oss9vqfvn.s[11]++;
+    cov_r1ckgzlm5.f[4]++;
+    cov_r1ckgzlm5.s[11]++;
 
     try {
-      cov_2oss9vqfvn.s[12]++;
+      cov_r1ckgzlm5.s[12]++;
       setItem$2(testKey$2, 'a');
-      var value1 = (cov_2oss9vqfvn.s[13]++, getItem$2(testKey$2));
-      cov_2oss9vqfvn.s[14]++;
+      var value1 = (cov_r1ckgzlm5.s[13]++, getItem$2(testKey$2));
+      cov_r1ckgzlm5.s[14]++;
       removeItem$2(testKey$2);
-      var value2 = (cov_2oss9vqfvn.s[15]++, getItem$2(testKey$2));
-      cov_2oss9vqfvn.s[16]++;
-      return (cov_2oss9vqfvn.b[0][0]++, value1 === 'a') && (cov_2oss9vqfvn.b[0][1]++, value2 === null);
+      var value2 = (cov_r1ckgzlm5.s[15]++, getItem$2(testKey$2));
+      cov_r1ckgzlm5.s[16]++;
+      return (cov_r1ckgzlm5.b[0][0]++, value1 === 'a') && (cov_r1ckgzlm5.b[0][1]++, value2 === null);
     } catch (e) {
-      cov_2oss9vqfvn.s[17]++;
+      cov_r1ckgzlm5.s[17]++;
       return false;
     }
   };
@@ -2085,11 +2085,11 @@
    */
 
 
-  cov_2oss9vqfvn.s[18]++;
+  cov_r1ckgzlm5.s[18]++;
 
   var setPreKey$2 = function setPreKey(key) {
-    cov_2oss9vqfvn.f[5]++;
-    cov_2oss9vqfvn.s[19]++;
+    cov_r1ckgzlm5.f[5]++;
+    cov_r1ckgzlm5.s[19]++;
     preKey$2 = key;
   };
   /**
@@ -2100,11 +2100,11 @@
    */
 
 
-  cov_2oss9vqfvn.s[20]++;
+  cov_r1ckgzlm5.s[20]++;
 
   var setTestKey$2 = function setTestKey(key) {
-    cov_2oss9vqfvn.f[6]++;
-    cov_2oss9vqfvn.s[21]++;
+    cov_r1ckgzlm5.f[6]++;
+    cov_r1ckgzlm5.s[21]++;
     testKey$2 = key;
   };
 
@@ -2125,13 +2125,13 @@
     setTestKey: setTestKey$2
   };
 
-  var cov_4e5s9786y = function () {
-    var path = "/Users/zhaoliming/GM13/github/browser-store/src/index.js";
-    var hash = "335d7da812aefd5c176d767b3ddb34527b8be31b";
+  var cov_1oviqvp1qe = function () {
+    var path = "/Users/zhaoliming/GM13/github/browser-storage/src/index.js";
+    var hash = "64b915aebab88cfbe6c3d8facfd31e8abd6864ac";
     var global = new Function("return this")();
     var gcv = "__coverage__";
     var coverageData = {
-      path: "/Users/zhaoliming/GM13/github/browser-store/src/index.js",
+      path: "/Users/zhaoliming/GM13/github/browser-storage/src/index.js",
       statementMap: {
         "0": {
           start: {
@@ -3355,7 +3355,7 @@
         "17": [0, 0]
       },
       _coverageSchema: "43e27e138ebf9cfc5966b082cf9a028302ed4184",
-      hash: "335d7da812aefd5c176d767b3ddb34527b8be31b"
+      hash: "64b915aebab88cfbe6c3d8facfd31e8abd6864ac"
     };
     var coverage = global[gcv] || (global[gcv] = {});
 
@@ -3366,11 +3366,11 @@
     return coverage[path] = coverageData;
   }();
 
-  var cookieStoreIsSupport = (cov_4e5s9786y.s[0]++, cookieStore.isSupport());
-  var localStoreIsSupport = (cov_4e5s9786y.s[1]++, localStore.isSupport());
-  var seesionStoreIsSupport = (cov_4e5s9786y.s[2]++, seesionStore.isSupport()); // 存储方式优先级
+  var cookieStoreIsSupport = (cov_1oviqvp1qe.s[0]++, cookieStore.isSupport());
+  var localStoreIsSupport = (cov_1oviqvp1qe.s[1]++, localStore.isSupport());
+  var seesionStoreIsSupport = (cov_1oviqvp1qe.s[2]++, seesionStore.isSupport()); // 存储方式优先级
 
-  var priority = (cov_4e5s9786y.s[3]++, 'lc');
+  var priority = (cov_1oviqvp1qe.s[3]++, 'lc');
   /**
    * 获取某个值
    *
@@ -3379,11 +3379,11 @@
    * @example obj.getItem('a2')
    */
 
-  cov_4e5s9786y.s[4]++;
+  cov_1oviqvp1qe.s[4]++;
 
   var getItem$3 = function getItem(key) {
-    cov_4e5s9786y.f[0]++;
-    cov_4e5s9786y.s[5]++;
+    cov_1oviqvp1qe.f[0]++;
+    cov_1oviqvp1qe.s[5]++;
     var _iteratorNormalCompletion = true;
     var _didIteratorError = false;
     var _iteratorError = undefined;
@@ -3391,34 +3391,34 @@
     try {
       for (var _iterator = priority[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
         var type = _step.value;
-        cov_4e5s9786y.s[6]++;
+        cov_1oviqvp1qe.s[6]++;
 
-        if ((cov_4e5s9786y.b[1][0]++, type === 'l') && (cov_4e5s9786y.b[1][1]++, localStoreIsSupport)) {
-          cov_4e5s9786y.b[0][0]++;
-          cov_4e5s9786y.s[7]++;
+        if ((cov_1oviqvp1qe.b[1][0]++, type === 'l') && (cov_1oviqvp1qe.b[1][1]++, localStoreIsSupport)) {
+          cov_1oviqvp1qe.b[0][0]++;
+          cov_1oviqvp1qe.s[7]++;
           return localStore.getItem(key);
         } else {
-          cov_4e5s9786y.b[0][1]++;
+          cov_1oviqvp1qe.b[0][1]++;
         }
 
-        cov_4e5s9786y.s[8]++;
+        cov_1oviqvp1qe.s[8]++;
 
-        if ((cov_4e5s9786y.b[3][0]++, type === 'c') && (cov_4e5s9786y.b[3][1]++, cookieStoreIsSupport)) {
-          cov_4e5s9786y.b[2][0]++;
-          cov_4e5s9786y.s[9]++;
+        if ((cov_1oviqvp1qe.b[3][0]++, type === 'c') && (cov_1oviqvp1qe.b[3][1]++, cookieStoreIsSupport)) {
+          cov_1oviqvp1qe.b[2][0]++;
+          cov_1oviqvp1qe.s[9]++;
           return cookieStore.getItem(key);
         } else {
-          cov_4e5s9786y.b[2][1]++;
+          cov_1oviqvp1qe.b[2][1]++;
         }
 
-        cov_4e5s9786y.s[10]++;
+        cov_1oviqvp1qe.s[10]++;
 
-        if ((cov_4e5s9786y.b[5][0]++, type === 's') && (cov_4e5s9786y.b[5][1]++, seesionStoreIsSupport)) {
-          cov_4e5s9786y.b[4][0]++;
-          cov_4e5s9786y.s[11]++;
+        if ((cov_1oviqvp1qe.b[5][0]++, type === 's') && (cov_1oviqvp1qe.b[5][1]++, seesionStoreIsSupport)) {
+          cov_1oviqvp1qe.b[4][0]++;
+          cov_1oviqvp1qe.s[11]++;
           return seesionStore.getItem(key);
         } else {
-          cov_4e5s9786y.b[4][1]++;
+          cov_1oviqvp1qe.b[4][1]++;
         }
       }
     } catch (err) {
@@ -3436,7 +3436,7 @@
       }
     }
 
-    cov_4e5s9786y.s[12]++;
+    cov_1oviqvp1qe.s[12]++;
     return null;
   };
   /**
@@ -3449,11 +3449,11 @@
    */
 
 
-  cov_4e5s9786y.s[13]++;
+  cov_1oviqvp1qe.s[13]++;
 
   var setItem$3 = function setItem(key, value) {
-    cov_4e5s9786y.f[1]++;
-    cov_4e5s9786y.s[14]++;
+    cov_1oviqvp1qe.f[1]++;
+    cov_1oviqvp1qe.s[14]++;
     var _iteratorNormalCompletion2 = true;
     var _didIteratorError2 = false;
     var _iteratorError2 = undefined;
@@ -3461,40 +3461,40 @@
     try {
       for (var _iterator2 = priority[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
         var type = _step2.value;
-        cov_4e5s9786y.s[15]++;
+        cov_1oviqvp1qe.s[15]++;
 
-        if ((cov_4e5s9786y.b[7][0]++, type === 'l') && (cov_4e5s9786y.b[7][1]++, localStoreIsSupport)) {
-          cov_4e5s9786y.b[6][0]++;
-          cov_4e5s9786y.s[16]++;
+        if ((cov_1oviqvp1qe.b[7][0]++, type === 'l') && (cov_1oviqvp1qe.b[7][1]++, localStoreIsSupport)) {
+          cov_1oviqvp1qe.b[6][0]++;
+          cov_1oviqvp1qe.s[16]++;
           localStore.setItem(key, value);
-          cov_4e5s9786y.s[17]++;
+          cov_1oviqvp1qe.s[17]++;
           return true;
         } else {
-          cov_4e5s9786y.b[6][1]++;
+          cov_1oviqvp1qe.b[6][1]++;
         }
 
-        cov_4e5s9786y.s[18]++;
+        cov_1oviqvp1qe.s[18]++;
 
-        if ((cov_4e5s9786y.b[9][0]++, type === 'c') && (cov_4e5s9786y.b[9][1]++, cookieStoreIsSupport)) {
-          cov_4e5s9786y.b[8][0]++;
-          cov_4e5s9786y.s[19]++;
+        if ((cov_1oviqvp1qe.b[9][0]++, type === 'c') && (cov_1oviqvp1qe.b[9][1]++, cookieStoreIsSupport)) {
+          cov_1oviqvp1qe.b[8][0]++;
+          cov_1oviqvp1qe.s[19]++;
           cookieStore.setItem(key, value);
-          cov_4e5s9786y.s[20]++;
+          cov_1oviqvp1qe.s[20]++;
           return true;
         } else {
-          cov_4e5s9786y.b[8][1]++;
+          cov_1oviqvp1qe.b[8][1]++;
         }
 
-        cov_4e5s9786y.s[21]++;
+        cov_1oviqvp1qe.s[21]++;
 
-        if ((cov_4e5s9786y.b[11][0]++, type === 's') && (cov_4e5s9786y.b[11][1]++, seesionStoreIsSupport)) {
-          cov_4e5s9786y.b[10][0]++;
-          cov_4e5s9786y.s[22]++;
+        if ((cov_1oviqvp1qe.b[11][0]++, type === 's') && (cov_1oviqvp1qe.b[11][1]++, seesionStoreIsSupport)) {
+          cov_1oviqvp1qe.b[10][0]++;
+          cov_1oviqvp1qe.s[22]++;
           seesionStore.setItem(key, value);
-          cov_4e5s9786y.s[23]++;
+          cov_1oviqvp1qe.s[23]++;
           return true;
         } else {
-          cov_4e5s9786y.b[10][1]++;
+          cov_1oviqvp1qe.b[10][1]++;
         }
       }
     } catch (err) {
@@ -3512,7 +3512,7 @@
       }
     }
 
-    cov_4e5s9786y.s[24]++;
+    cov_1oviqvp1qe.s[24]++;
     return false;
   };
   /**
@@ -3524,11 +3524,11 @@
    */
 
 
-  cov_4e5s9786y.s[25]++;
+  cov_1oviqvp1qe.s[25]++;
 
   var removeItem$3 = function removeItem(key) {
-    cov_4e5s9786y.f[2]++;
-    cov_4e5s9786y.s[26]++;
+    cov_1oviqvp1qe.f[2]++;
+    cov_1oviqvp1qe.s[26]++;
     var _iteratorNormalCompletion3 = true;
     var _didIteratorError3 = false;
     var _iteratorError3 = undefined;
@@ -3536,40 +3536,40 @@
     try {
       for (var _iterator3 = priority[Symbol.iterator](), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
         var type = _step3.value;
-        cov_4e5s9786y.s[27]++;
+        cov_1oviqvp1qe.s[27]++;
 
-        if ((cov_4e5s9786y.b[13][0]++, type === 'l') && (cov_4e5s9786y.b[13][1]++, localStoreIsSupport)) {
-          cov_4e5s9786y.b[12][0]++;
-          cov_4e5s9786y.s[28]++;
+        if ((cov_1oviqvp1qe.b[13][0]++, type === 'l') && (cov_1oviqvp1qe.b[13][1]++, localStoreIsSupport)) {
+          cov_1oviqvp1qe.b[12][0]++;
+          cov_1oviqvp1qe.s[28]++;
           localStore.removeItem(key);
-          cov_4e5s9786y.s[29]++;
+          cov_1oviqvp1qe.s[29]++;
           return true;
         } else {
-          cov_4e5s9786y.b[12][1]++;
+          cov_1oviqvp1qe.b[12][1]++;
         }
 
-        cov_4e5s9786y.s[30]++;
+        cov_1oviqvp1qe.s[30]++;
 
-        if ((cov_4e5s9786y.b[15][0]++, type === 'c') && (cov_4e5s9786y.b[15][1]++, cookieStoreIsSupport)) {
-          cov_4e5s9786y.b[14][0]++;
-          cov_4e5s9786y.s[31]++;
+        if ((cov_1oviqvp1qe.b[15][0]++, type === 'c') && (cov_1oviqvp1qe.b[15][1]++, cookieStoreIsSupport)) {
+          cov_1oviqvp1qe.b[14][0]++;
+          cov_1oviqvp1qe.s[31]++;
           cookieStore.removeItem(key);
-          cov_4e5s9786y.s[32]++;
+          cov_1oviqvp1qe.s[32]++;
           return true;
         } else {
-          cov_4e5s9786y.b[14][1]++;
+          cov_1oviqvp1qe.b[14][1]++;
         }
 
-        cov_4e5s9786y.s[33]++;
+        cov_1oviqvp1qe.s[33]++;
 
-        if ((cov_4e5s9786y.b[17][0]++, type === 's') && (cov_4e5s9786y.b[17][1]++, seesionStoreIsSupport)) {
-          cov_4e5s9786y.b[16][0]++;
-          cov_4e5s9786y.s[34]++;
+        if ((cov_1oviqvp1qe.b[17][0]++, type === 's') && (cov_1oviqvp1qe.b[17][1]++, seesionStoreIsSupport)) {
+          cov_1oviqvp1qe.b[16][0]++;
+          cov_1oviqvp1qe.s[34]++;
           seesionStore.removeItem(key);
-          cov_4e5s9786y.s[35]++;
+          cov_1oviqvp1qe.s[35]++;
           return true;
         } else {
-          cov_4e5s9786y.b[16][1]++;
+          cov_1oviqvp1qe.b[16][1]++;
         }
       }
     } catch (err) {
@@ -3587,7 +3587,7 @@
       }
     }
 
-    cov_4e5s9786y.s[36]++;
+    cov_1oviqvp1qe.s[36]++;
     return false;
   };
   /**
@@ -3598,11 +3598,11 @@
    */
 
 
-  cov_4e5s9786y.s[37]++;
+  cov_1oviqvp1qe.s[37]++;
 
   var setPriority = function setPriority(key) {
-    cov_4e5s9786y.f[3]++;
-    cov_4e5s9786y.s[38]++;
+    cov_1oviqvp1qe.f[3]++;
+    cov_1oviqvp1qe.s[38]++;
     priority = key;
   };
   /**
@@ -3613,15 +3613,15 @@
    */
 
 
-  cov_4e5s9786y.s[39]++;
+  cov_1oviqvp1qe.s[39]++;
 
   var setPreKey$3 = function setPreKey(key) {
-    cov_4e5s9786y.f[4]++;
-    cov_4e5s9786y.s[40]++;
+    cov_1oviqvp1qe.f[4]++;
+    cov_1oviqvp1qe.s[40]++;
     cookieStore.setPreKey(key);
-    cov_4e5s9786y.s[41]++;
+    cov_1oviqvp1qe.s[41]++;
     localStore.setPreKey(key);
-    cov_4e5s9786y.s[42]++;
+    cov_1oviqvp1qe.s[42]++;
     seesionStore.setPreKey(key);
   };
 

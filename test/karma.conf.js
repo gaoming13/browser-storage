@@ -2,7 +2,7 @@ module.exports = (config) => {
   config.set({
     // 浏览器中加载的文件列表(默认[])
     files: [
-      '../dist/browser-store.istanbul.js',
+      '../dist/browser-storage.istanbul.js',
       '../test/index.js'
     ],
     // 监视文件(默认true):若文件被改变,执行测试
