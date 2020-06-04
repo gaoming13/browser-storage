@@ -1,7 +1,7 @@
 {
   "name": "@gaoming13/browser-storage",
   "description": "Use cookies, local storage, session storage according to priority.",
-  "version": "1.0.2-beta.1",
+  "version": "1.0.2",
   "main": "dist/browser-storage.common.js",
   "module": "dist/browser-storage.esm.js",
   "unpkg": "dist/browser-storage.min.js",
