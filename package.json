@@ -1,12 +1,14 @@
 {
   "name": "@gaoming13/browser-storage",
   "description": "Use cookies, local storage, session storage according to priority.",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "dist/browser-storage.common.js",
   "module": "dist/browser-storage.esm.js",
   "unpkg": "dist/browser-storage.min.js",
   "types": "src/index.d.js",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "repository": "gaoming13/browser-storage",
   "license": "MIT",
   "files": [
