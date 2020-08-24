@@ -6,9 +6,6 @@
   "module": "dist/browser-storage.esm.js",
   "unpkg": "dist/browser-storage.min.js",
   "types": "src/index.d.js",
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
-  },
   "repository": "gaoming13/browser-storage",
   "license": "MIT",
   "files": [
