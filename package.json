@@ -1,7 +1,7 @@
 {
   "name": "@gaoming13/browser-storage",
   "description": "Use cookies, local storage, session storage according to priority.",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "main": "dist/browser-storage.common.js",
   "module": "dist/browser-storage.esm.js",
   "unpkg": "dist/browser-storage.min.js",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/preset-env": "^7.10.2",
+    "@types/cookie": "^0.4.1",
     "babel-plugin-istanbul": "^6.0.0",
     "chai": "^4.2.0",
     "codecov": "^3.7.0",
