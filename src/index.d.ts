@@ -3,7 +3,7 @@ import localStore from './localStore';
 import seesionStore from './sessionStore';
 
 // 存储方式优先级
-export type Prioritys = 'c' | 'l' | 's' | 'cl' | 'lc' | 'cs' | 'ls' | 'cls';
+export type Prioritys = 'c' | 'l' | 's' | 'cl' | 'lc' | 'cs' | 'ls' | 'sc' | 'scl' | 'cls';
 
 // 获取某个值
 export function getItem(key: string): string | null;

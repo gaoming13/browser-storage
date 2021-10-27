@@ -16,9 +16,9 @@ function _arrayLikeToArray(arr, len) {
 }
 
 function _createForOfIteratorHelper(o, allowArrayLike) {
-  var it;
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
 
-  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+  if (!it) {
     if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
       if (it) o = it;
       var i = 0;
@@ -51,7 +51,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
       err;
   return {
     s: function () {
-      it = o[Symbol.iterator]();
+      it = it.call(o);
     },
     n: function () {
       var step = it.next();
@@ -278,9 +278,9 @@ var cookie = {
 	serialize: serialize_1
 };
 
-var preKey = ''; // 测试键名
+var preKey$2 = ''; // 测试键名
 
-var testKey = '__test__'; // cookie存储选项
+var testKey$2 = '__test__'; // cookie存储选项
 // https://github.com/jshttp/cookie#options-1
 
 var cookieOptions = {
@@ -294,9 +294,9 @@ var cookieOptions = {
  * @example obj.getItem('a2')
  */
 
-var getItem = function getItem(key) {
+var getItem$3 = function getItem(key) {
   var cookieObj = cookie.parse(document.cookie);
-  return cookieObj[preKey + key] === undefined ? null : cookieObj[preKey + key];
+  return cookieObj[preKey$2 + key] === undefined ? null : cookieObj[preKey$2 + key];
 };
 /**
  * 设置某个cookie值
@@ -308,10 +308,10 @@ var getItem = function getItem(key) {
  */
 
 
-var setItem = function setItem(key, value) {
+var setItem$3 = function setItem(key, value) {
   var options = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   options = Object.assign({}, cookieOptions, options);
-  document.cookie = cookie.serialize(preKey + key, value, options);
+  document.cookie = cookie.serialize(preKey$2 + key, value, options);
 };
 /**
  * 删除某个cookie
@@ -322,11 +322,11 @@ var setItem = function setItem(key, value) {
  */
 
 
-var removeItem = function removeItem(key, options) {
+var removeItem$3 = function removeItem(key, options) {
   options = Object.assign({}, cookieOptions, options, {
     maxAge: -1
   });
-  document.cookie = cookie.serialize(preKey + key, '', options);
+  document.cookie = cookie.serialize(preKey$2 + key, '', options);
 };
 /**
  * 验证是否支持cookie
@@ -336,12 +336,12 @@ var removeItem = function removeItem(key, options) {
  */
 
 
-var isSupport = function isSupport() {
+var isSupport$2 = function isSupport() {
   try {
-    setItem(testKey, 'a');
-    var value1 = getItem(testKey);
-    removeItem(testKey);
-    var value2 = getItem(testKey);
+    setItem$3(testKey$2, 'a');
+    var value1 = getItem$3(testKey$2);
+    removeItem$3(testKey$2);
+    var value2 = getItem$3(testKey$2);
     return value1 === 'a' && value2 === null;
   } catch (e) {
     return false;
@@ -366,8 +366,8 @@ var setOptions = function setOptions(option) {
  */
 
 
-var setPreKey = function setPreKey(key) {
-  preKey = key;
+var setPreKey$3 = function setPreKey(key) {
+  preKey$2 = key;
 };
 /**
  * 设置测试键名
@@ -377,25 +377,25 @@ var setPreKey = function setPreKey(key) {
  */
 
 
-var setTestKey = function setTestKey(key) {
-  testKey = key;
+var setTestKey$2 = function setTestKey(key) {
+  testKey$2 = key;
 };
 
 var cookieStore = {
   // 获取某个值
-  getItem: getItem,
+  getItem: getItem$3,
   // 设置某个值
-  setItem: setItem,
+  setItem: setItem$3,
   // 删除某个键值
-  removeItem: removeItem,
+  removeItem: removeItem$3,
   // 是否支持cookie
-  isSupport: isSupport,
+  isSupport: isSupport$2,
   // 设置cookie存储选项
   setOptions: setOptions,
   // 设置键名前缀
-  setPreKey: setPreKey,
+  setPreKey: setPreKey$3,
   // 设置测试键名
-  setTestKey: setTestKey
+  setTestKey: setTestKey$2
 };
 
 // 键名前缀
@@ -410,7 +410,7 @@ var testKey$1 = '__test__';
  * @example obj.getItem('a2')
  */
 
-var getItem$1 = function getItem(key) {
+var getItem$2 = function getItem(key) {
   return localStorage.getItem(preKey$1 + key);
 };
 /**
@@ -422,7 +422,7 @@ var getItem$1 = function getItem(key) {
  */
 
 
-var setItem$1 = function setItem(key, value) {
+var setItem$2 = function setItem(key, value) {
   localStorage.setItem(preKey$1 + key, value);
 };
 /**
@@ -433,7 +433,7 @@ var setItem$1 = function setItem(key, value) {
  */
 
 
-var removeItem$1 = function removeItem(key) {
+var removeItem$2 = function removeItem(key) {
   localStorage.removeItem(preKey$1 + key);
 };
 /**
@@ -446,10 +446,10 @@ var removeItem$1 = function removeItem(key) {
 
 var isSupport$1 = function isSupport() {
   try {
-    setItem$1(testKey$1, 'a');
-    var value1 = getItem$1(testKey$1);
-    removeItem$1(testKey$1);
-    var value2 = getItem$1(testKey$1);
+    setItem$2(testKey$1, 'a');
+    var value1 = getItem$2(testKey$1);
+    removeItem$2(testKey$1);
+    var value2 = getItem$2(testKey$1);
     return value1 === 'a' && value2 === null;
   } catch (e) {
     return false;
@@ -463,7 +463,7 @@ var isSupport$1 = function isSupport() {
  */
 
 
-var setPreKey$1 = function setPreKey(key) {
+var setPreKey$2 = function setPreKey(key) {
   preKey$1 = key;
 };
 /**
@@ -480,23 +480,23 @@ var setTestKey$1 = function setTestKey(key) {
 
 var localStore = {
   // 获取某个值
-  getItem: getItem$1,
+  getItem: getItem$2,
   // 设置某个值
-  setItem: setItem$1,
+  setItem: setItem$2,
   // 删除某个键值
-  removeItem: removeItem$1,
+  removeItem: removeItem$2,
   // 是否支持localStorage
   isSupport: isSupport$1,
   // 设置键名前缀
-  setPreKey: setPreKey$1,
+  setPreKey: setPreKey$2,
   // 设置测试键名
   setTestKey: setTestKey$1
 };
 
 // 键名前缀
-var preKey$2 = ''; // 测试键名
+var preKey = ''; // 测试键名
 
-var testKey$2 = '__test__';
+var testKey = '__test__';
 /**
  * 获取某个sessionStorage值
  *
@@ -505,8 +505,8 @@ var testKey$2 = '__test__';
  * @example obj.getItem('a2')
  */
 
-var getItem$2 = function getItem(key) {
-  return sessionStorage.getItem(preKey$2 + key);
+var getItem$1 = function getItem(key) {
+  return sessionStorage.getItem(preKey + key);
 };
 /**
  * 设置某个sessionStorage值
@@ -517,8 +517,8 @@ var getItem$2 = function getItem(key) {
  */
 
 
-var setItem$2 = function setItem(key, value) {
-  sessionStorage.setItem(preKey$2 + key, value);
+var setItem$1 = function setItem(key, value) {
+  sessionStorage.setItem(preKey + key, value);
 };
 /**
  * 删除某个sessionStorage键
@@ -528,8 +528,8 @@ var setItem$2 = function setItem(key, value) {
  */
 
 
-var removeItem$2 = function removeItem(key) {
-  sessionStorage.removeItem(preKey$2 + key);
+var removeItem$1 = function removeItem(key) {
+  sessionStorage.removeItem(preKey + key);
 };
 /**
  * 清空sessionStorage键
@@ -547,12 +547,12 @@ var clear = function clear() {
  */
 
 
-var isSupport$2 = function isSupport() {
+var isSupport = function isSupport() {
   try {
-    setItem$2(testKey$2, 'a');
-    var value1 = getItem$2(testKey$2);
-    removeItem$2(testKey$2);
-    var value2 = getItem$2(testKey$2);
+    setItem$1(testKey, 'a');
+    var value1 = getItem$1(testKey);
+    removeItem$1(testKey);
+    var value2 = getItem$1(testKey);
     return value1 === 'a' && value2 === null;
   } catch (e) {
     return false;
@@ -566,8 +566,8 @@ var isSupport$2 = function isSupport() {
  */
 
 
-var setPreKey$2 = function setPreKey(key) {
-  preKey$2 = key;
+var setPreKey$1 = function setPreKey(key) {
+  preKey = key;
 };
 /**
  * 设置测试键名
@@ -577,25 +577,25 @@ var setPreKey$2 = function setPreKey(key) {
  */
 
 
-var setTestKey$2 = function setTestKey(key) {
-  testKey$2 = key;
+var setTestKey = function setTestKey(key) {
+  testKey = key;
 };
 
 var seesionStore = {
   // 获取某个值
-  getItem: getItem$2,
+  getItem: getItem$1,
   // 设置某个值
-  setItem: setItem$2,
+  setItem: setItem$1,
   // 删除某个键值
-  removeItem: removeItem$2,
+  removeItem: removeItem$1,
   // 清空键值
   clear: clear,
   // 是否支持sessionStorage
-  isSupport: isSupport$2,
+  isSupport: isSupport,
   // 设置键名前缀
-  setPreKey: setPreKey$2,
+  setPreKey: setPreKey$1,
   // 设置测试键名
-  setTestKey: setTestKey$2
+  setTestKey: setTestKey
 };
 
 var cookieStoreIsSupport = cookieStore.isSupport();
@@ -611,7 +611,7 @@ var priority = 'lc';
  * @example obj.getItem('a2')
  */
 
-var getItem$3 = function getItem(key) {
+var getItem = function getItem(key) {
   var _iterator = _createForOfIteratorHelper(priority),
       _step;
 
@@ -649,7 +649,7 @@ var getItem$3 = function getItem(key) {
  */
 
 
-var setItem$3 = function setItem(key, value) {
+var setItem = function setItem(key, value) {
   var _iterator2 = _createForOfIteratorHelper(priority),
       _step2;
 
@@ -689,7 +689,7 @@ var setItem$3 = function setItem(key, value) {
  */
 
 
-var removeItem$3 = function removeItem(key) {
+var removeItem = function removeItem(key) {
   var _iterator3 = _createForOfIteratorHelper(priority),
       _step3;
 
@@ -739,7 +739,7 @@ var setPriority = function setPriority(key) {
  */
 
 
-var setPreKey$3 = function setPreKey(key) {
+var setPreKey = function setPreKey(key) {
   cookieStore.setPreKey(key);
   localStore.setPreKey(key);
   seesionStore.setPreKey(key);
@@ -747,15 +747,15 @@ var setPreKey$3 = function setPreKey(key) {
 
 var index = {
   // 获取某个值
-  getItem: getItem$3,
+  getItem: getItem,
   // 设置某个值
-  setItem: setItem$3,
+  setItem: setItem,
   // 删除某个键值
-  removeItem: removeItem$3,
+  removeItem: removeItem,
   // 设置存储方式优先级
   setPriority: setPriority,
   // 设置键名前缀
-  setPreKey: setPreKey$3,
+  setPreKey: setPreKey,
   // cookie设置键名前缀
   cookieStoreSetPreKey: cookieStore.setPreKey,
   // localStorage设置键名前缀
@@ -772,5 +772,4 @@ var index = {
   cookieSetOptions: cookieStore.setOptions
 };
 
-export default index;
-//# sourceMappingURL=browser-storage.esm.js.map
+export { index as default };

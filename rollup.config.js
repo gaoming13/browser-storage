@@ -15,6 +15,7 @@ const conf = {
     {
       file: 'dist/browser-storage.common.js',
       format: 'cjs',
+      exports: 'named',
     },
     // ESM
     {
